@@ -1,39 +1,45 @@
 import { Container } from "./src/container/Container";
 import { File } from "./src/file/File";
-import { switchedObject } from "./src/functions/functions";
+import { switchedObject, checkCorrectData } from "./src/functions/functions";
 
-function main() {
+function main(text) {
   let file = new File("1.txt", "2.txt");
   file.clearFile();
 
-  file.writeStrFromFile("Начало!");
+  try {
+    file.writeStrFromFile("Начало!");
 
-  file.readFile();
+    file.readFile();
 
-  const container = new Container();
-  const array = file.buildFileFromArray();
+    const container = new Container();
+    const array = file.buildFileFromArray(text);
 
-  switchedObject(array, container);
+    checkCorrectData(array);
 
-  file.writeStrFromFile(
-    `Кол-во элементов в контейнере: ${container.arr.length}`
-  );
-  file.writeStrFromFile("Обычный контейнер:");
+    switchedObject(array, container);
 
-  file.writeContainerFromFile(container.arr);
+    file.writeStrFromFile(
+      `Кол-во элементов в контейнере: ${container.arr.length}`
+    );
+    file.writeStrFromFile("Обычный контейнер:");
 
-  file.writeStrFromFile("Отсортированный контейнер:");
-  container.sorting();
-  file.writeContainerFromFile(container.arr);
+    file.writeContainerFromFile(container.arr);
 
-  file.writeStrFromFile("Отфильтрованный контейнер:");
-  container.skip(file);
+    file.writeStrFromFile("Отсортированный контейнер:");
+    container.sorting();
+    file.writeContainerFromFile(container.arr);
 
-  container.clear();
-  file.writeStrFromFile(
-    `Кол-во элементов в контейнере: ${container.arr.length}`
-  );
-  file.writeStrFromFile("Конец!");
+    file.writeStrFromFile("Отфильтрованный контейнер:");
+    container.skip(file);
+
+    container.clear();
+    file.writeStrFromFile(
+      `Кол-во элементов в контейнере: ${container.arr.length}`
+    );
+    file.writeStrFromFile("Конец!");
+  } catch (error) {
+    file.writeStrFromFile(error);
+  }
 }
 
 main();
