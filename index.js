@@ -20,6 +20,9 @@ function main() {
   );
   file.writeStrFromFile("Обычный контейнер:");
 
+  file.writeStrFromFile("Мультиметод:");
+  container.multimethod(file);
+
   file.writeContainerFromFile(container.arr);
 
   container.clear();
