@@ -27,6 +27,9 @@ export class Bus extends Transport {
       case "Bus":
         this.bus(objectOne, objectTwo, file);
         break;
+      case "Car":
+        this.car(objectOne, objectTwo, file);
+        break;
       default:
         return 0;
     }
@@ -42,5 +45,11 @@ export class Bus extends Transport {
     file.writeStrFromFile(this.buildObjectFromStr(objectOne));
     file.writeStrFromFile(objectTwo.buildObjectFromStr(objectTwo));
     file.writeStrFromFile("Bus - Bus");
+  }
+
+  car(objectOne, objectTwo, file) {
+    file.writeStrFromFile(this.buildObjectFromStr(objectOne));
+    file.writeStrFromFile(objectTwo.buildObjectFromStr(objectTwo));
+    file.writeStrFromFile("Bus - Car");
   }
 }
