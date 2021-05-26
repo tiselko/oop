@@ -22,6 +22,10 @@ function main() {
 
   file.writeContainerFromFile(container.arr);
 
+  file.writeStrFromFile("Отсортированный контейнер:");
+  container.sorting();
+  file.writeContainerFromFile(container.arr);
+
   container.clear();
   file.writeStrFromFile(
     `Кол-во элементов в контейнере: ${container.arr.length}`
