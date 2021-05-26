@@ -1,8 +1,8 @@
 import { Transport } from "../transport/Transport";
 
 export class Bus extends Transport {
-  constructor({ capacity, power }) {
-    super({ power });
+  constructor({ capacity, power, fuel }) {
+    super({ power, fuel });
     this.capacity = capacity;
   }
 
