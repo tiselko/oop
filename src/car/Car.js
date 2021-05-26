@@ -15,4 +15,6 @@ export class Car extends Transport {
 
     return str;
   }
+
+  skip() {}
 }

@@ -15,4 +15,6 @@ export class Bus extends Transport {
 
     return str;
   }
+
+  skip() {}
 }

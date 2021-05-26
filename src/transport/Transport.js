@@ -3,4 +3,6 @@ export class Transport {
     this.power = power;
     this.fuel = fuel;
   }
+
+  skip() {}
 }
