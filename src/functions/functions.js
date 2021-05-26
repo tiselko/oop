@@ -38,6 +38,7 @@ export function switchedObject(array, container) {
         const carParams = {
           speed: params.value,
           power: params.power,
+          fuel: params.fuel,
         };
         car = new Car(carParams);
         container.arr.push(car);
