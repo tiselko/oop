@@ -10,6 +10,7 @@ export function switchedObject(array, container) {
       id: element[0],
       value: element[1],
       power: element[2],
+      fuel: element[3],
     };
 
     switch (params.id) {
@@ -17,6 +18,7 @@ export function switchedObject(array, container) {
         let truckParams = {
           payload: params.value,
           power: params.power,
+          fuel: params.fuel,
         };
         truck = new Truck(truckParams);
         container.arr.push(truck);
@@ -25,6 +27,7 @@ export function switchedObject(array, container) {
         const busParams = {
           capacity: params.value,
           power: params.power,
+          fuel: params.fuel,
         };
         bus = new Bus(busParams);
         container.arr.push(bus);

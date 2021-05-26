@@ -1,5 +1,6 @@
 export class Transport {
-  constructor({ power }) {
+  constructor({ power, fuel }) {
     this.power = power;
+    this.fuel = fuel;
   }
 }

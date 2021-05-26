@@ -1,8 +1,8 @@
 import { Transport } from "../transport/Transport";
 
 export class Truck extends Transport {
-  constructor({ payload, power }) {
-    super({ power });
+  constructor({ payload, power, fuel }) {
+    super({ power, fuel });
     this.payload = payload;
   }
 
