@@ -15,4 +15,8 @@ export class Truck extends Transport {
 
     return str;
   }
+
+  skip(file, obj) {
+    file.writeStrFromFile(this.buildObjectFromStr(obj));
+  }
 }
