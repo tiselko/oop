@@ -7,6 +7,10 @@ function main(text) {
   file.clearFile();
 
   try {
+    if (!file.exists()) {
+      throw "Файл не найден!";
+    }
+
     file.writeStrFromFile("Начало!");
 
     file.readFile();

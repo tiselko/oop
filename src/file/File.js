@@ -14,6 +14,10 @@ export class File {
     );
   }
 
+  exists() {
+    return fs.existsSync(this.filePathInput);
+  }
+
   writeStrFromFile(str) {
     fs.appendFileSync(this.filePathOutput, str + "\n");
   }
@@ -32,5 +36,6 @@ export class File {
 
   clearFile() {
     fs.writeFile(this.filePathOutput.toString(), "", () => {});
+    return fs.readFileSync(this.filePathOutput, "utf-8").toString().split("\n");
   }
 }

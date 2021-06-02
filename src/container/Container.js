@@ -13,6 +13,7 @@ export class Container {
 
   clear() {
     this.arr = [];
+    return this.arr;
   }
 
   skip(file) {
